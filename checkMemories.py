@@ -18,4 +18,3 @@ def checkMemory():
 	pattern = re.compile('\d+MB')
 	
 	memorylist = pattern.findall(systemres)
-  
