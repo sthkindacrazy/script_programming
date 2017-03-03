@@ -7,6 +7,8 @@ import subprocess
 import re
 import time
 
+filedirpath = "C:\\Desktop\\folder"
+
 def checkMemory():
 	systemres = subprocess.getoutput(["systeminfo"])
 	# to get rid of , ex) 1,576 -> 1576
