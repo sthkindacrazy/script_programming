@@ -3,7 +3,10 @@
 */
 
 def search_encrypt():
-  return 0
+    return 0
 
 def search_decrypt():
-  return 0
+    return 0
+
+def process_start():
+    retrun 0
